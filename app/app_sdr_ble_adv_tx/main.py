@@ -31,7 +31,7 @@ try:
         current_time = time.time()
         if count == 0 or current_time - start_time >= interval:
             mac = [1,2,3,4,5,6]
-            adv_name = f"hello btfz's gnu-radio {count}"
+            adv_name = f"PK's gnu-radio {count}"
             adv_datas = [len(adv_name) + 1, 0x09] + [ord(char) for char in adv_name]
             channel = 37
             ll_datas_normalization_sample = app_beacon_gen(mac, adv_datas, channel)

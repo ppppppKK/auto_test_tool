@@ -28,7 +28,7 @@ options:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [8, 8]
+    coordinate: [40, 36.0]
     rotation: 0
     state: enabled
 
@@ -42,7 +42,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [240, 364.0]
+    coordinate: [328, 44.0]
     rotation: 0
     state: enabled
 - name: tx_freq
@@ -54,7 +54,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [240, 428.0]
+    coordinate: [504, 44.0]
     rotation: 0
     state: enabled
 - name: blocks_file_source_0
@@ -76,7 +76,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [240, 244.0]
+    coordinate: [280, 448.0]
     rotation: 0
     state: disabled
 - name: soapy_plutosdr_sink_0
@@ -95,7 +95,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [512, 280.0]
+    coordinate: [928, 332.0]
     rotation: 0
     state: enabled
 - name: zeromq_sub_source_0
@@ -104,6 +104,7 @@ blocks:
     address: tcp://127.0.0.1:55556
     affinity: ''
     alias: ''
+    bind: 'False'
     comment: ''
     hwm: '-1'
     key: ''
@@ -117,7 +118,7 @@ blocks:
     bus_sink: false
     bus_source: false
     bus_structure: null
-    coordinate: [240, 148.0]
+    coordinate: [280, 232.0]
     rotation: 0
     state: enabled
 
@@ -127,4 +128,4 @@ connections:
 
 metadata:
   file_format: 1
-  grc_version: 3.10.11.0
+  grc_version: 3.10.12.0

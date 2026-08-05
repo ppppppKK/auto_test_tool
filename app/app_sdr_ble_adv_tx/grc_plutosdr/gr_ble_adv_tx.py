@@ -6,7 +6,7 @@
 #
 # GNU Radio Python Flow Graph
 # Title: gr_ble_adv_tx
-# GNU Radio version: 3.10.11.0
+# GNU Radio version: 3.10.12.0
 
 from gnuradio import gr
 from gnuradio.filter import firdes
@@ -39,7 +39,7 @@ class gr_ble_adv_tx(gr.top_block):
         # Blocks
         ##################################################
 
-        self.zeromq_sub_source_0 = zeromq.sub_source(gr.sizeof_gr_complex, 1, 'tcp://127.0.0.1:55556', 100, False, (-1), '')
+        self.zeromq_sub_source_0 = zeromq.sub_source(gr.sizeof_gr_complex, 1, 'tcp://127.0.0.1:55556', 100, False, (-1), '', False)
         self.soapy_plutosdr_sink_0 = None
         dev = 'driver=plutosdr'
         stream_args = ''
