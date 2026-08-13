@@ -68,3 +68,17 @@ try:
 
 
 [p1]:./doc/架构.drawio.png
+
+</br>
+
+**信道与功率配置（新增）**
+
+- 默认在 BLE 广播信道 37(2402MHz)、38(2426MHz)、39(2480MHz) 之间轮流广播，每个信道默认广播 1 秒；切换信道时同步切换 SDR 发射频率。
+- 通过命令行参数调整发射功率/增益（--gain）与每个信道的广播时长（--interval），也可以固定单信道（--channel）：
+
+```
+python main.py --gain 60 --interval 1.0   # 37/38/39 轮流广播，发射增益 60
+python main.py --channel 37 --gain 60     # 固定 37 信道广播
+```
+
+- 不指定 --gain 时使用当前 SDR 平台的默认增益（plutosdr 89 / hackrf 0 / limesdr 20）；切换平台后请按对应平台的范围调整。

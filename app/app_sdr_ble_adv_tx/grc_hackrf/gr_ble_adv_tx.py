@@ -34,8 +34,10 @@ class gr_ble_adv_tx(gr.top_block):
         # Variables
         ##################################################
         self.tx_freq = tx_freq = 2402000000
+        self.tx_gain = tx_gain = 0
         self.samp_rate = samp_rate = 4e6
         self.IF = IF = 40
+        self.tx_bb_gain = tx_bb_gain = 0
 
         ##################################################
         # Blocks
@@ -48,9 +50,9 @@ class gr_ble_adv_tx(gr.top_block):
         self.osmosdr_sink_0.set_sample_rate(samp_rate)
         self.osmosdr_sink_0.set_center_freq(tx_freq, 0)
         self.osmosdr_sink_0.set_freq_corr(0, 0)
-        self.osmosdr_sink_0.set_gain(0, 0)
+        self.osmosdr_sink_0.set_gain(tx_gain, 0)
         self.osmosdr_sink_0.set_if_gain(IF, 0)
-        self.osmosdr_sink_0.set_bb_gain(0, 0)
+        self.osmosdr_sink_0.set_bb_gain(tx_bb_gain, 0)
         self.osmosdr_sink_0.set_antenna('', 0)
         self.osmosdr_sink_0.set_bandwidth(0, 0)
 
@@ -81,6 +83,20 @@ class gr_ble_adv_tx(gr.top_block):
     def set_IF(self, IF):
         self.IF = IF
         self.osmosdr_sink_0.set_if_gain(self.IF, 0)
+
+    def get_tx_gain(self):
+        return self.tx_gain
+
+    def set_tx_gain(self, tx_gain):
+        self.tx_gain = tx_gain
+        self.osmosdr_sink_0.set_gain(self.tx_gain, 0)
+
+    def get_tx_bb_gain(self):
+        return self.tx_bb_gain
+
+    def set_tx_bb_gain(self, tx_bb_gain):
+        self.tx_bb_gain = tx_bb_gain
+        self.osmosdr_sink_0.set_bb_gain(self.tx_bb_gain, 0)
 
 
 

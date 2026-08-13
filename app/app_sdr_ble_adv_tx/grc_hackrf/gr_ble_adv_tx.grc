@@ -79,6 +79,30 @@ blocks:
     coordinate: [8, 108.0]
     rotation: 0
     state: enabled
+- name: tx_bb_gain
+  id: variable
+  parameters:
+    comment: ''
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [408, 604.0]
+    rotation: 0
+    state: enabled
+- name: tx_gain
+  id: variable
+  parameters:
+    comment: ''
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [408, 412.0]
+    rotation: 0
+    state: enabled
 - name: tx_freq
   id: variable
   parameters:
@@ -151,7 +175,7 @@ blocks:
     ant8: ''
     ant9: ''
     args: hackrf=0
-    bb_gain0: '0'
+    bb_gain0: tx_bb_gain
     bb_gain1: '20'
     bb_gain10: '20'
     bb_gain11: '20'
@@ -288,7 +312,7 @@ blocks:
     freq7: 100e6
     freq8: 100e6
     freq9: 100e6
-    gain0: '0'
+    gain0: tx_gain
     gain1: '10'
     gain10: '10'
     gain11: '10'

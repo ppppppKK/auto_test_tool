@@ -57,6 +57,18 @@ blocks:
     coordinate: [504, 44.0]
     rotation: 0
     state: enabled
+- name: tx_gain
+  id: variable
+  parameters:
+    comment: ''
+    value: '89'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [504, 124.0]
+    rotation: 0
+    state: enabled
 - name: blocks_file_source_0
   id: blocks_file_source
   parameters:
@@ -88,7 +100,7 @@ blocks:
     center_freq: tx_freq
     comment: ''
     dev_args: ''
-    gain: '89'
+    gain: tx_gain
     samp_rate: samp_rate
     type: fc32
   states:

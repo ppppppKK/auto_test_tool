@@ -34,6 +34,7 @@ class gr_ble_adv_tx(gr.top_block):
         # Variables
         ##################################################
         self.tx_freq = tx_freq = 2402000000
+        self.tx_gain = tx_gain = 0
         self.samp_rate = samp_rate = 4e6
 
         ##################################################
@@ -70,6 +71,13 @@ class gr_ble_adv_tx(gr.top_block):
     def set_samp_rate(self, samp_rate):
         self.samp_rate = samp_rate
         self.blocks_throttle_0.set_sample_rate(self.samp_rate)
+
+    def get_tx_gain(self):
+        return self.tx_gain
+
+    def set_tx_gain(self, tx_gain):
+        # ZMQ 中转模式没有射频前端，仅记录配置
+        self.tx_gain = tx_gain
 
 
 

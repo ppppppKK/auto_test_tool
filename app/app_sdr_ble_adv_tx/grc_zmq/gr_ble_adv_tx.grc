@@ -45,6 +45,18 @@ blocks:
     coordinate: [216, 356.0]
     rotation: 0
     state: enabled
+- name: tx_gain
+  id: variable
+  parameters:
+    comment: ''
+    value: '0'
+  states:
+    bus_sink: false
+    bus_source: false
+    bus_structure: null
+    coordinate: [216, 492.0]
+    rotation: 0
+    state: enabled
 - name: tx_freq
   id: variable
   parameters:

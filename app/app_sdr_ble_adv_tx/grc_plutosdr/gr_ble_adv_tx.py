@@ -33,6 +33,7 @@ class gr_ble_adv_tx(gr.top_block):
         # Variables
         ##################################################
         self.tx_freq = tx_freq = 2402000000
+        self.tx_gain = tx_gain = 89.0
         self.samp_rate = samp_rate = 4e6
 
         ##################################################
@@ -51,7 +52,7 @@ class gr_ble_adv_tx(gr.top_block):
         self.soapy_plutosdr_sink_0.set_sample_rate(0, samp_rate)
         self.soapy_plutosdr_sink_0.set_bandwidth(0, 0.0)
         self.soapy_plutosdr_sink_0.set_frequency(0, tx_freq)
-        self.soapy_plutosdr_sink_0.set_gain(0, min(max(89, 0.0), 89.0))
+        self.soapy_plutosdr_sink_0.set_gain(0, min(max(tx_gain, 0.0), 89.0))
 
 
         ##################################################
@@ -66,6 +67,13 @@ class gr_ble_adv_tx(gr.top_block):
     def set_tx_freq(self, tx_freq):
         self.tx_freq = tx_freq
         self.soapy_plutosdr_sink_0.set_frequency(0, self.tx_freq)
+
+    def get_tx_gain(self):
+        return self.tx_gain
+
+    def set_tx_gain(self, tx_gain):
+        self.tx_gain = tx_gain
+        self.soapy_plutosdr_sink_0.set_gain(0, min(max(self.tx_gain, 0.0), 89.0))
 
     def get_samp_rate(self):
         return self.samp_rate
